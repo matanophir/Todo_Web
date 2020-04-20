@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import  {Button} from 'react-bootstrap'
 
 
 export class Todoitem extends Component {
@@ -26,19 +27,16 @@ export class Todoitem extends Component {
                    <input type='checkbox' onChange={this.props.markcomplete.bind
                     (this,id)}></input>
                    {title}
-                   <button style={btnStyle} onClick={this.props.delTodo.bind
-                    (this,id)}>x</button>
+                   <Button variant="outline-danger" style={btnStyle} onClick={this.props.delTodo.bind
+                    (this,id)}>x</Button>
                 </p> 
             </div>
         )
     }
 }
 
-const btnStyle = {
-    background:'#ff0000',
-    color:'#fff',
-    border:'none',
-    padding: '5px 8px',
+const btnStyle = {    
+   
     borderRadius:'50%',
     cursor:'pointer',
     float: 'right'

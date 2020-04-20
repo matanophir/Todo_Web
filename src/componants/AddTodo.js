@@ -20,30 +20,46 @@ export class AddTodo extends Component {
     render() {
         return (
 
-            <form onSubmit={this.onSubmit}>
-                <Form>
-                    <Form.Row>
-                    <Form.Group  as={Col} controlId="input box">
+            
+                <Form className='mainform' style={mainformstyle} onSubmit={this.onSubmit}>
+                    <Row >
                         
-                        <Form.Control   name='title' type="text" value={this.state.title} onChange={this.onChange} placeholder="enter todo.." />
-                        </Form.Group>
-                        <Form.Group as={Col}>  
+                        <Col xs={10} className='block'style={blockstyle} >
+                            <Form.Group  controlId="input box"  >                        
+                             <Form.Control     name='title' type="text" value={this.state.title} onChange={this.onChange} placeholder="enter todo.." />
+                             </Form.Group> 
+                        </Col>
+                        <Col xs={2} className='block'  >
+                        <Form.Group  controlId="input box" style={blockstyle}>
                         <Button   variant="primary" type="submit">
                         Submit
                         </Button>
-                        </Form.Group>     
-                    </Form.Row>
+                        </Form.Group>  
+                        </Col>   
+                    </Row>
 
                     
                    
                     </Form>
-            </form>
+            
             
 
         )
     }
 }
 
+const blockstyle={
+    margin: 'auto',
+    width: '50%',
+    border: '3px',
+    padding: '5px'
+
+}
+const mainformstyle={
+    margin: '1em',
+    padding: '0',
+    textalign: 'center',
+}
 //PropTypes
 AddTodo.propTypes = {
     addTodo: PropTypes.object.isRequired,

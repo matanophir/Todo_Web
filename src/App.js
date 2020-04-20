@@ -6,6 +6,9 @@ import Header from './componants/layout/Header'
 import AddTodo from './componants/AddTodo'
 import About from './componants/pages/About';
 import Axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import  {Container} from 'react-bootstrap'
+
 
 
 
@@ -57,7 +60,7 @@ export default class App extends Component {
     return (
       <Router>
         <div className="App">
-          <div className='container'>
+          <Container>
             
             <Header></Header>
             <Route exact path='/' render={props=>(
@@ -67,7 +70,7 @@ export default class App extends Component {
               </React.Fragment>
             )}/>
             <Route path='/about' component={About}/>
-          </div>
+            </Container>
       
       </div>
     </Router>

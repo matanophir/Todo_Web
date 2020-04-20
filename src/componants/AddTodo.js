@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import  {Button, Row, Form, Col} from 'react-bootstrap'
 
 export class AddTodo extends Component {
     state={
@@ -18,24 +19,26 @@ export class AddTodo extends Component {
     }
     render() {
         return (
-            <form onSubmit={this.onSubmit} style={{display: 'flex'}}>
-                <input
 
-                type='text'
-                name='title'
-                style={{flex:'10', padding:'5px'}}
-                placeholder='Add Todo ...'
-                value={this.state.title}
-                onChange={this.onChange}
-                />
-                <input
-                type='submit'
-                value='Submit' 
-                className='btn'
-                style={{flex:1}}
-                />
+            <form onSubmit={this.onSubmit}>
+                <Form>
+                    <Form.Row>
+                    <Form.Group  as={Col} controlId="input box">
+                        
+                        <Form.Control   name='title' type="text" value={this.state.title} onChange={this.onChange} placeholder="enter todo.." />
+                        </Form.Group>
+                        <Form.Group as={Col}>  
+                        <Button   variant="primary" type="submit">
+                        Submit
+                        </Button>
+                        </Form.Group>     
+                    </Form.Row>
 
+                    
+                   
+                    </Form>
             </form>
+            
 
         )
     }
